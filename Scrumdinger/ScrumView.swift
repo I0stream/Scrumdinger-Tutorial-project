@@ -29,6 +29,8 @@ struct ScrumView: View {
     }
 }
 
+//this is purely a previewing function of the view
+//we populate it with data ourselves
 struct ScrumView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
