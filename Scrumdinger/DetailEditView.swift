@@ -7,10 +7,8 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct DetailEditView: View {
-    @State private var data = DailyScrum.Data()
+    @Binding var data: DailyScrum.Data
     @State private var newAttendeeName = ""
     
     var body: some View {
@@ -45,6 +43,7 @@ struct DetailEditView: View {
                         }
                     }) {
                         Image(systemName: "plus.circle.fill")
+                            .accessibilityLabel("Add attendee")
                     }
                     .disabled(newAttendeeName.isEmpty)
                 }
@@ -55,6 +54,6 @@ struct DetailEditView: View {
 
 struct DetailEditView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailEditView()
+        DetailEditView(data: .constant(DailyScrum.sampleData[0].data))
     }
 }
